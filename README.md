@@ -20,5 +20,11 @@ pnpm run build
 pnpm run lint
 ```
 
+## Build to Electron application
+```bash
+pn run electron:serve
+pn run electron:build
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

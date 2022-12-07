@@ -1,20 +1,19 @@
 <!-- main page -->
 <template>
   <TopInfo />
-
   <div class="content-box">
     <div class="box-content">
-      <img src="../assets/box_main.png" alt="">
+      <img src="../assets/box_main.png" alt="" />
       <div class="text-box">
-        <p class="kor">{{num}}호에서 제품을<br>수령해주세요.</p>
-        <p class="eng">Please pick up the bread from the {{num}}th compartment.</p>
+        <p class="kor">{{ num }}호에서 제품을<br />수령해주세요.</p>
+        <p class="eng">
+          Please pick up the bread from the {{ num }}th compartment.
+        </p>
       </div>
-      <p id="count">{{count}}초뒤 초기 화면으로 이동합니다.</p>
-      
+      <p id="count">{{ count }}초뒤 초기 화면으로 이동합니다.</p>
     </div>
   </div>
-
-  <BottomCotent />
+  <BottomCotent v-bind:charShow="charShow"></BottomCotent>
 </template>
 
 <script>
@@ -25,8 +24,9 @@ export default {
   name: "App",
   components: { BottomCotent, TopInfo },
   data: () => ({
-    num: "402",
-    count: "10"
+    num: "201",
+    count: "10",
+    charShow: true,
   }),
   mounted() {
     this.countdown();
@@ -36,10 +36,10 @@ export default {
     countdown() {
       this.count--;
       if (this.count <= 1) {
-        this.$router.push({path: "/"});
+        this.$router.push({ path: "/" });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -68,7 +68,7 @@ export default {
 }
 
 .pickup-sel a {
-  color: #3E3A39;
+  color: #3e3a39;
 }
 
 .content-btn {
@@ -84,11 +84,11 @@ export default {
   height: 100%;
 }
 
-.content-btn button{
+.content-btn button {
   width: 130px;
   height: 45px;
-  background-color: #86694A;
-  border: #86694A;
+  background-color: #86694a;
+  border: #86694a;
   border-radius: 12px;
   color: white;
   font-size: 18px;

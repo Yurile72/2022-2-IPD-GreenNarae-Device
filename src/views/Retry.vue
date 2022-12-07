@@ -11,8 +11,7 @@
       </div>
     </div>
   </div>
-
-  <BottomCotent />
+  <BottomCotent v-bind:charShow="charShow"></BottomCotent>
 </template>
 
 <script>
@@ -22,6 +21,9 @@ import TopInfo from "../components/TopInfo";
 export default {
   name: "App",
   components: { BottomCotent, TopInfo },
+  data: () => ({
+    charShow: false,
+  }),
 };
 </script>
 

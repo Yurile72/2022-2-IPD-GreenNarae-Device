@@ -1,6 +1,6 @@
 <template>
   <!-- logo -->
-  <div class="char" v-if="CharShow">
+  <div class="char" v-show="CharShow">
     <img src="../assets/sungsim.png" alt="" />
   </div>
   <div class="logo">
@@ -10,10 +10,11 @@
 ß
 <script>
 export default {
+  props: ['charShow'],
   components: {},
   data() {
     return {
-      CharShow: true,
+      CharShow: this.charShow,
     }
   },
 };

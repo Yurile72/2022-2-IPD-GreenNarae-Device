@@ -4,15 +4,22 @@
 
   <div class="content-box">
     <div class="box-content">
-      <img src="../assets/qr-scan.png" alt="" width="200px" />
+      <img src="../assets/qr-scan.png" width="200px" />
       <div class="text-box">
         <p class="kor">QR코드를 스캔해주세요.</p>
         <p class="eng">Please scan the QR code.</p>
       </div>
     </div>
+    <input
+      id="barcodeInput"
+      type="text"
+      @keyup.enter="submit"
+      v-model="value"
+      autofocus
+    />
+    <!-- <input id="barcodeInput" type="text" v-on:send-data="submit" v-model="value" autofocus /> -->
   </div>
-
-  <BottomCotent />
+  <BottomCotent v-bind:charShow="charShow"></BottomCotent>
 </template>
 
 <script>
@@ -22,10 +29,27 @@ import TopInfo from "../components/TopInfo";
 export default {
   name: "App",
   components: { BottomCotent, TopInfo },
+  data: () => ({
+    value: "",
+    charShow: false,
+  }),
+  methods: {
+    submit: function () {
+      this.$router.push({ name: "Confirm", query: { name: this.value } });
+      console.log(this.value);
+    },
+  },
 };
 </script>
 
 <style>
+#barcodeInput {
+  /* display: contents; */
+  border: none;
+  background-color: transparent;
+  color: transparent;
+}
+
 .text-box p {
   margin-block: 2px;
 }

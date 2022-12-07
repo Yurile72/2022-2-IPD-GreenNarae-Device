@@ -13,16 +13,27 @@
 </template>
 
 <script>
+// eslint-disable-next-line
+import { getDatabase, ref, onValue, update } from "firebase/database";
+
 export default {
   name: "App",
   components: {},
   data: () => ({
     time: "2022.12.31 - 23:59",
-    location: "성심당 은행동 본점",
+    location: "성심당",
   }),
   mounted() {
     this.updateNow();
     setInterval(this.updateNow.bind(this), 1000);
+  },
+  created() {
+    const db = getDatabase(this.$firebase);
+    const statusRef = ref(db, "location");
+    onValue(statusRef, (snapshot) => {
+      const data = snapshot.val();
+      this.location = data;
+    });
   },
   methods: {
     updateNow() {

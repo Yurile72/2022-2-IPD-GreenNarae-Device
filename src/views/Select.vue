@@ -9,7 +9,7 @@
       <p class="eng">Please select your pick-up method.</p>
     </div>
     <!-- 추후 PressPhone 으로 이동 -->
-    <a href="Confirm">
+    <a href="PressPhone">
       <div class="sel-box">
         <div class="box-content">
           <img src="../assets/keypad-btn.png" alt="" width="150px" />
@@ -32,8 +32,7 @@
       </div>
     </a>
   </div>
-
-  <BottomCotent />
+  <BottomCotent v-bind:charShow="charShow"></BottomCotent>
 </template>
 
 <script>
@@ -43,6 +42,9 @@ import TopInfo from "../components/TopInfo";
 export default {
   name: "App",
   components: { BottomCotent, TopInfo },
+  data: () => ({
+    charShow: true,
+  }),
 };
 </script>
 

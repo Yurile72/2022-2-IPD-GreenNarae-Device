@@ -16,7 +16,7 @@
       </div>
       <p id="pickup-start-eng">Touch the screen to pickup tour bread</p>
     </div>
-    <BottomCotent />
+    <BottomCotent v-bind:charShow="charShow"></BottomCotent>
   </div>
 </template>
 
@@ -26,16 +26,12 @@ export default {
   name: "App",
   components: { BottomCotent },
   data: () => ({
-    CharShow: false
-
-  })
-  
+    charShow: false,
+  }),
 };
-
 </script>
 
 <style>
-
 body {
   overflow: hidden;
   width: 600px;

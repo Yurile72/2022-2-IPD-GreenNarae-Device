@@ -13,7 +13,7 @@ const routes = [
     { path : "/Select", name : "Select", component : Select },
     { path : "/PressPhone", name : "PressPhone", component : PressPhone },
     { path : "/QRScan", name : "QRScan", component : QRScan },
-    { path : "/Confirm", name : "Confirm", component : Confirm },
+    { path : "/Confirm", name : "Confirm", component : Confirm, props: true },
     { path : "/Retry", name : "Retry", component : Retry },
     { path : "/Complete", name : "Complete", component : Complete },
     { path : "/:catchAll(.*)", name : "ErrorPage", component : ErrorPage},

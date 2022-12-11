@@ -17,7 +17,6 @@
       v-model="value"
       autofocus
     />
-    <!-- <input id="barcodeInput" type="text" v-on:send-data="submit" v-model="value" autofocus /> -->
   </div>
   <BottomCotent v-bind:charShow="charShow"></BottomCotent>
 </template>

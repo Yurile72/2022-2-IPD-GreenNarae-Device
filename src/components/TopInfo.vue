@@ -3,7 +3,6 @@
   <div class="top">
     <!-- back -->
     
-    <!-- <a href="/"><img src="../assets/back-btn.png" alt="" /></a> -->
     <a @click="$router.go(-1)"><img src="../assets/back-btn.png" alt="" /></a>
     <div class="top-info">
       <p class="time">{{ time }}</p>

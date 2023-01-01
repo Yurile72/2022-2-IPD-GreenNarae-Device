@@ -45,10 +45,13 @@ export default {
     openPickupBox: function () {
       const db = getDatabase(this.$firebase);
       const updates = {};
-      updates["/door"] = false;
+      updates["/pick_201/door"] = true;
       update(ref(db), updates);
+      updates["/pick_201/door"] = false;
+      setTimeout(() => update(ref(db), updates), 2000);
       // setTimeout(() => location.href='Complete',600);
       this.$router.replace("Complete");
+
       // location.href='Complete';
     },
   },
